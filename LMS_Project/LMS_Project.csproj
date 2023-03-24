@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A61AECB-28BA-4899-BB5E-7E42D049FC17}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LMS_Project</RootNamespace>
+    <AssemblyName>LMS_Project</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>bin\LMS_Project.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core, Version=1.20.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Core.1.20.0\lib\net461\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Identity, Version=1.5.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Identity.1.5.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>C:\Users\ADMIN\Downloads\Telegram Desktop\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.55.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.55.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.55.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.55.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.55.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.AspNet, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.AspNet.0.2.0\lib\net45\Hangfire.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.7.28.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.7.28\lib\net46\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.7.28.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.7.28\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MB.Extensions">
+      <HintPath>..\..\..\HocNghe\LMS_Project\bin\MB.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Graph, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>C:\Users\ADMIN\Downloads\Telegram Desktop\Microsoft.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Graph.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\ADMIN\Downloads\Telegram Desktop\Microsoft.Graph.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.30.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.30.1\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.18.4.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.2.18.4\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.12.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.12.2\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.12.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.12.2\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.11.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.6.11.1\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.11.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>C:\Users\ADMIN\Downloads\Telegram Desktop\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.12.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.12.2\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream">
+      <HintPath>C:\Users\ADMIN\Downloads\Telegram Desktop\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Downloads\bin\bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.4.2.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.2.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="QRCoder">
+      <HintPath>C:\Users\ADMIN\Downloads\Telegram Desktop\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>..\..\..\..\..\Downloads\bin\bin\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.12.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.12.2\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\..\..\..\..\Downloads\bin\bin\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.Data.6.0.0\lib\net461\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>C:\Users\ADMIN\Downloads\Telegram Desktop\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>C:\Users\ADMIN\Downloads\Telegram Desktop\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Claims, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\bin\bin\System.Security.Claims.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.4.5.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\ControllerAPIs\AnswerInVideoController.cs" />
+    <Compile Include="Areas\ControllerAPIs\AreaController.cs" />
+    <Compile Include="Areas\ControllerAPIs\AutoNotiController.cs" />
+    <Compile Include="Areas\ControllerAPIs\BaseController.cs" />
+    <Compile Include="Areas\ControllerAPIs\BillController.cs" />
+    <Compile Include="Areas\ControllerAPIs\BranchController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CartController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CertificateConfigController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CertificateController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CertificateTemplateController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ChangeInfoController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ClassChangeController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ClassController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ClassRegistrationController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ClassReserveController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ContractController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CurriculumController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CurriculumDetailController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CustomerController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CustomerNoteController.cs" />
+    <Compile Include="Areas\ControllerAPIs\CustomerStatusController.cs" />
+    <Compile Include="Areas\ControllerAPIs\DashboardController.cs" />
+    <Compile Include="Areas\ControllerAPIs\DayOffController.cs" />
+    <Compile Include="Areas\ControllerAPIs\DiscountController.cs" />
+    <Compile Include="Areas\ControllerAPIs\DistrictController.cs" />
+    <Compile Include="Areas\ControllerAPIs\DocumentLibraryController.cs" />
+    <Compile Include="Areas\ControllerAPIs\DocumentLibraryDirectoryController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ExamController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ExamResultController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ExamSectionController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ExerciseGroupController.cs" />
+    <Compile Include="Areas\ControllerAPIs\FeedbackController.cs" />
+    <Compile Include="Areas\ControllerAPIs\FeedbackReplyController.cs" />
+    <Compile Include="Areas\ControllerAPIs\FrequentlyQuestionController.cs" />
+    <Compile Include="Areas\ControllerAPIs\GeneralNotificationController.cs" />
+    <Compile Include="Areas\ControllerAPIs\GradeController.cs" />
+    <Compile Include="Areas\ControllerAPIs\HistoryDonateController.cs" />
+    <Compile Include="Areas\ControllerAPIs\IdiomController.cs" />
+    <Compile Include="Areas\ControllerAPIs\JobController.cs" />
+    <Compile Include="Areas\ControllerAPIs\LearningNeedController.cs" />
+    <Compile Include="Areas\ControllerAPIs\LessonVideoController.cs" />
+    <Compile Include="Areas\ControllerAPIs\MarkQuantityController.cs" />
+    <Compile Include="Areas\ControllerAPIs\MarkSalaryController.cs" />
+    <Compile Include="Areas\ControllerAPIs\NewsFeedCommentController.cs" />
+    <Compile Include="Areas\ControllerAPIs\NewsFeedController.cs" />
+    <Compile Include="Areas\ControllerAPIs\NewsFeedGroupController.cs" />
+    <Compile Include="Areas\ControllerAPIs\NewsFeedLikeController.cs" />
+    <Compile Include="Areas\ControllerAPIs\NewsFeedReplyController.cs" />
+    <Compile Include="Areas\ControllerAPIs\NotificationController.cs" />
+    <Compile Include="Areas\ControllerAPIs\NotificationInClassController.cs" />
+    <Compile Include="Areas\ControllerAPIs\NotificationInVideoController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PackageSectionController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PackageSkillController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PackageStudentController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PaymentAllowController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PaymentApproveController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PaymentMethodController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PaymentSessionController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PermissionController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ProgramController.cs" />
+    <Compile Include="Areas\ControllerAPIs\PurposeController.cs" />
+    <Compile Include="Areas\ControllerAPIs\QuestionInVideoController.cs" />
+    <Compile Include="Areas\ControllerAPIs\RefundController.cs" />
+    <Compile Include="Areas\ControllerAPIs\RollUpController.cs" />
+    <Compile Include="Areas\ControllerAPIs\RoomController.cs" />
+    <Compile Include="Areas\ControllerAPIs\SalaryConfigController.cs" />
+    <Compile Include="Areas\ControllerAPIs\SalaryController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ScheduleAvailableController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ScheduleController.cs" />
+    <Compile Include="Areas\ControllerAPIs\SectionController.cs" />
+    <Compile Include="Areas\ControllerAPIs\SeminarController.cs" />
+    <Compile Include="Areas\ControllerAPIs\SeminarRecordController.cs" />
+    <Compile Include="Areas\ControllerAPIs\SourceController.cs" />
+    <Compile Include="Areas\ControllerAPIs\StatisticalController.cs" />
+    <Compile Include="Areas\ControllerAPIs\StudentAssessmentController.cs" />
+    <Compile Include="Areas\ControllerAPIs\StudentInClassController.cs" />
+    <Compile Include="Areas\ControllerAPIs\StudentRollUpQrCodeController.cs" />
+    <Compile Include="Areas\ControllerAPIs\StudyRouteController.cs" />
+    <Compile Include="Areas\ControllerAPIs\StudyTimeController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TagCategoryController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TagController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TeacherOffController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TemplateController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TestAppointmentController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TestAppointmentNoteController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TestController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TimeLineController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TranscriptController.cs" />
+    <Compile Include="Areas\ControllerAPIs\TutoringFeeController.cs" />
+    <Compile Include="Areas\ControllerAPIs\UserInformationController.cs" />
+    <Compile Include="Areas\ControllerAPIs\AccountController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ProductController.cs" />
+    <Compile Include="Areas\ControllerAPIs\UserInNewsFeedGroupController.cs" />
+    <Compile Include="Areas\ControllerAPIs\VideoActiveCodeController.cs" />
+    <Compile Include="Areas\ControllerAPIs\VideoCourseStudentController.cs" />
+    <Compile Include="Areas\ControllerAPIs\WardController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ZoomConfigController.cs" />
+    <Compile Include="Areas\ControllerAPIs\ZoomRoomController.cs" />
+    <Compile Include="Areas\Models\AppDomainResult.cs" />
+    <Compile Include="Areas\Models\ObjectResult.cs" />
+    <Compile Include="Areas\Models\SearchOptions.cs" />
+    <Compile Include="Areas\Models\StatisticalModel.cs" />
+    <Compile Include="Areas\Models\ZoomModel.cs" />
+    <Compile Include="Areas\Request\BaseCreate.cs" />
+    <Compile Include="Areas\Request\BaseUpdate.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="LMS\ApiMessage.cs" />
+    <Compile Include="LMS\connectionString.cs" />
+    <Compile Include="LMS\lmsEnum.cs" />
+    <Compile Include="LMS\MemoryCacheHelper.cs" />
+    <Compile Include="Migrations\202302241053011_update_file.cs" />
+    <Compile Include="Migrations\202302241053011_update_file.Designer.cs">
+      <DependentUpon>202302241053011_update_file.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303021033110_updatecertification1233123.cs" />
+    <Compile Include="Migrations\202303021033110_updatecertification1233123.Designer.cs">
+      <DependentUpon>202303021033110_updatecertification1233123.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303030249318_update_user_rf.cs" />
+    <Compile Include="Migrations\202303030249318_update_user_rf.Designer.cs">
+      <DependentUpon>202303030249318_update_user_rf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\tbl_CertificateTemplate.cs" />
+    <Compile Include="Models\tbl_CurriculumDetailInClass.cs" />
+    <Compile Include="Models\DomainEntity.cs" />
+    <Compile Include="Models\tbl_AnswerInVideo.cs" />
+    <Compile Include="Models\tbl_AnswerResult.cs" />
+    <Compile Include="Models\tbl_Background.cs" />
+    <Compile Include="Models\tbl_Bill.cs" />
+    <Compile Include="Models\tbl_BillDetail.cs" />
+    <Compile Include="Models\tbl_Branch.cs" />
+    <Compile Include="Models\tbl_Cart.cs" />
+    <Compile Include="Models\tbl_Certificate.cs" />
+    <Compile Include="Models\tbl_CertificateConfig.cs" />
+    <Compile Include="Models\tbl_ClassChange.cs" />
+    <Compile Include="Models\tbl_ChangeInfo.cs" />
+    <Compile Include="Models\tbl_Class.cs" />
+    <Compile Include="Models\tbl_ClassRegistration.cs" />
+    <Compile Include="Models\tbl_ClassReserve.cs" />
+    <Compile Include="Models\tbl_Comment.cs" />
+    <Compile Include="Models\tbl_Config.cs" />
+    <Compile Include="Models\tbl_Contract.cs" />
+    <Compile Include="Models\tbl_Curriculum.cs" />
+    <Compile Include="Models\tbl_CurriculumDetail.cs" />
+    <Compile Include="Models\tbl_CurriculumInClass.cs" />
+    <Compile Include="Models\tbl_Customer.cs" />
+    <Compile Include="Models\tbl_CustomerNote.cs" />
+    <Compile Include="Models\tbl_CustomerStatus.cs" />
+    <Compile Include="Models\tbl_DayOff.cs" />
+    <Compile Include="Models\tbl_Discount.cs" />
+    <Compile Include="Models\tbl_DocumentLibrary.cs" />
+    <Compile Include="Models\tbl_DocumentLibraryDirectory.cs" />
+    <Compile Include="Models\tbl_Exam.cs" />
+    <Compile Include="Models\tbl_ExamResult.cs" />
+    <Compile Include="Models\tbl_ExamSection.cs" />
+    <Compile Include="Models\tbl_ExamSectionResult.cs" />
+    <Compile Include="Models\tbl_Exercise.cs" />
+    <Compile Include="Models\tbl_Answer.cs" />
+    <Compile Include="Models\tbl_ExerciseGroup.cs" />
+    <Compile Include="Models\tbl_ExerciseGroupResult.cs" />
+    <Compile Include="Models\tbl_ExerciseResult.cs" />
+    <Compile Include="Models\tbl_Feedback.cs" />
+    <Compile Include="Models\tbl_FeedbackReply.cs" />
+    <Compile Include="Models\tbl_FileCurriculumInClass.cs" />
+    <Compile Include="Models\tbl_FileInCurriculumDetail.cs" />
+    <Compile Include="Models\tbl_FileInNewsFeed.cs" />
+    <Compile Include="Models\tbl_FileInVideo.cs" />
+    <Compile Include="Models\tbl_FrequentlyQuestion.cs" />
+    <Compile Include="Models\tbl_GeneralNotification.cs" />
+    <Compile Include="Models\tbl_Grade.cs" />
+    <Compile Include="Models\tbl_HistoryDonate.cs" />
+    <Compile Include="Models\tbl_Idiom.cs" />
+    <Compile Include="Models\tbl_Job.cs" />
+    <Compile Include="Models\tbl_LearningNeed.cs" />
+    <Compile Include="Models\tbl_LessonCompleted.cs" />
+    <Compile Include="Models\tbl_LessonVideo.cs" />
+    <Compile Include="Models\tbl_Like.cs" />
+    <Compile Include="Models\tbl_MarkQuantity.cs" />
+    <Compile Include="Models\tbl_MarkSalary.cs" />
+    <Compile Include="Models\tbl_NewsFeed.cs" />
+    <Compile Include="Models\tbl_NewsFeedComment.cs" />
+    <Compile Include="Models\tbl_NewsFeedGroup.cs" />
+    <Compile Include="Models\tbl_NewsFeedLike.cs" />
+    <Compile Include="Models\tbl_NewsFeedReply.cs" />
+    <Compile Include="Models\tbl_NotificationInClass.cs" />
+    <Compile Include="Models\tbl_PackageSection.cs" />
+    <Compile Include="Models\tbl_PackageSkill.cs" />
+    <Compile Include="Models\tbl_PackageStudent.cs" />
+    <Compile Include="Models\tbl_PaymentAllow.cs" />
+    <Compile Include="Models\tbl_PaymentApprove.cs" />
+    <Compile Include="Models\tbl_PaymentMethod.cs" />
+    <Compile Include="Models\tbl_PaymentSession.cs" />
+    <Compile Include="Models\tbl_Permission.cs" />
+    <Compile Include="Models\tbl_Point.cs" />
+    <Compile Include="Models\tbl_Program.cs" />
+    <Compile Include="Models\tbl_Purpose.cs" />
+    <Compile Include="Models\tbl_QuestionInVideo.cs" />
+    <Compile Include="Models\tbl_Refund.cs" />
+    <Compile Include="Models\tbl_RollUp.cs" />
+    <Compile Include="Models\tbl_Room.cs" />
+    <Compile Include="Models\tbl_Salary.cs" />
+    <Compile Include="Models\tbl_SalaryConfig.cs" />
+    <Compile Include="Models\tbl_Schedule.cs" />
+    <Compile Include="Models\tbl_ScheduleAvailable.cs" />
+    <Compile Include="Models\tbl_Section.cs" />
+    <Compile Include="Models\tbl_SectionCompleted.cs" />
+    <Compile Include="Models\tbl_Seminar.cs" />
+    <Compile Include="Models\tbl_SeminarRecord.cs" />
+    <Compile Include="Models\tbl_Source.cs" />
+    <Compile Include="Models\tbl_StudentAssessment.cs" />
+    <Compile Include="Models\tbl_StudentInClass.cs" />
+    <Compile Include="Models\tbl_StudentRollUpQrCode.cs" />
+    <Compile Include="Models\tbl_StudyRoute.cs" />
+    <Compile Include="Models\tbl_StudyTime.cs" />
+    <Compile Include="Models\tbl_Tag.cs" />
+    <Compile Include="Models\tbl_TagCategory.cs" />
+    <Compile Include="Models\tbl_TeacherInProgram.cs" />
+    <Compile Include="Models\tbl_TeacherOff.cs" />
+    <Compile Include="Models\tbl_Template.cs" />
+    <Compile Include="Models\tbl_TestAppointment.cs" />
+    <Compile Include="Models\tbl_TestAppointmentNote.cs" />
+    <Compile Include="Models\tbl_TimeLine.cs" />
+    <Compile Include="Models\tbl_Transcript.cs" />
+    <Compile Include="Models\tbl_Product.cs" />
+    <Compile Include="Models\tbl_TutoringFee.cs" />
+    <Compile Include="Models\tbl_UserInNFGroup.cs" />
+    <Compile Include="Models\tbl_VideoActiveCode.cs" />
+    <Compile Include="Models\tbl_VideoCourseStudent.cs" />
+    <Compile Include="Models\tbl_Ward.cs" />
+    <Compile Include="Models\tbl_ZoomConfig.cs" />
+    <Compile Include="Models\tbl_ZoomRoom.cs" />
+    <Compile Include="Services\AnswerInVideoService.cs" />
+    <Compile Include="Services\Area.cs" />
+    <Compile Include="Services\AutoNotiService.cs" />
+    <Compile Include="Services\BillService.cs" />
+    <Compile Include="Services\BranchService.cs" />
+    <Compile Include="Services\CartService.cs" />
+    <Compile Include="Services\CertificateConfigService.cs" />
+    <Compile Include="Services\CertificateService.cs" />
+    <Compile Include="Services\CertificateTemplateService.cs" />
+    <Compile Include="Services\ChangeInfoService.cs" />
+    <Compile Include="Services\ClassChangeService.cs" />
+    <Compile Include="Services\ClassRegistrationService.cs" />
+    <Compile Include="Services\ClassReserveService.cs" />
+    <Compile Include="Services\ClassService.cs" />
+    <Compile Include="Services\ContractService.cs" />
+    <Compile Include="Services\CurriculumDetailInClassService.cs" />
+    <Compile Include="Services\CurriculumDetailService.cs" />
+    <Compile Include="Services\CurriculumInClassService.cs" />
+    <Compile Include="Services\CurriculumService.cs" />
+    <Compile Include="Services\CustomerNoteService.cs" />
+    <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\CustomerStatusService.cs" />
+    <Compile Include="Services\DashboardService.cs" />
+    <Compile Include="Services\DayOffService.cs" />
+    <Compile Include="Services\DiscountService.cs" />
+    <Compile Include="Services\District.cs" />
+    <Compile Include="Services\DocumentLibraryDirectoryService.cs" />
+    <Compile Include="Services\DocumentLibraryService.cs" />
+    <Compile Include="Services\ExamResultService.cs" />
+    <Compile Include="Services\ExamService.cs" />
+    <Compile Include="Services\ExamSectionService.cs" />
+    <Compile Include="Services\ExerciseGroupService.cs" />
+    <Compile Include="Services\FeedbackReplyService.cs" />
+    <Compile Include="Services\FeedbackService.cs" />
+    <Compile Include="Services\FileCurriculumInClassSerivce.cs" />
+    <Compile Include="Services\FileInCurriculumDetailService.cs" />
+    <Compile Include="Services\FileInVideoService.cs" />
+    <Compile Include="Services\FrequentlyQuestionService.cs" />
+    <Compile Include="Services\GeneralNotificationService.cs" />
+    <Compile Include="Services\GradeService.cs" />
+    <Compile Include="Services\HistoryDonateService.cs" />
+    <Compile Include="Services\IdiomService.cs" />
+    <Compile Include="Services\JobService.cs" />
+    <Compile Include="Services\LearningNeedService.cs" />
+    <Compile Include="Services\LessonVideoService.cs" />
+    <Compile Include="Services\MarkQuantityService.cs" />
+    <Compile Include="Services\MarkSalaryService.cs" />
+    <Compile Include="Services\NewsFeedCommentService.cs" />
+    <Compile Include="Services\NewsFeedGroupService.cs" />
+    <Compile Include="Services\NewsFeedLikeService.cs" />
+    <Compile Include="Services\NewsFeedReplyService.cs" />
+    <Compile Include="Services\NewsFeedService.cs" />
+    <Compile Include="Services\NotificationInClassService.cs" />
+    <Compile Include="Services\NotificationInVideoService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\PackageSectionService.cs" />
+    <Compile Include="Services\PackageSkillService.cs" />
+    <Compile Include="Services\PackageStudentService.cs" />
+    <Compile Include="Services\PaymentAllowService.cs" />
+    <Compile Include="Services\PaymentApproveService.cs" />
+    <Compile Include="Services\PaymentMethodService.cs" />
+    <Compile Include="Services\PaymentSessionService.cs" />
+    <Compile Include="Services\PermissionService.cs" />
+    <Compile Include="Services\ProgramService.cs" />
+    <Compile Include="Services\PurposeService.cs" />
+    <Compile Include="Services\PushAuto.cs" />
+    <Compile Include="Services\QuestionInVideoService.cs" />
+    <Compile Include="Services\RefundService.cs" />
+    <Compile Include="Services\RollUpService.cs" />
+    <Compile Include="Services\RoomService.cs" />
+    <Compile Include="Services\SalaryConfigService.cs" />
+    <Compile Include="Services\SalaryService.cs" />
+    <Compile Include="Services\ScheduleAvailableService.cs" />
+    <Compile Include="Services\ScheduleService.cs" />
+    <Compile Include="Services\SectionService.cs" />
+    <Compile Include="Services\SeminarRecordService.cs" />
+    <Compile Include="Services\SeminarService.cs" />
+    <Compile Include="Services\SourceService.cs" />
+    <Compile Include="Services\StatisticalService.cs" />
+    <Compile Include="Services\StudentAssessmentService.cs" />
+    <Compile Include="Services\StudentInClassService.cs" />
+    <Compile Include="Services\StudentRollUpQrCodeService.cs" />
+    <Compile Include="Services\StudyRouteService.cs" />
+    <Compile Include="Services\StudyTimeService.cs" />
+    <Compile Include="Services\TagCategoryService.cs" />
+    <Compile Include="Services\TagService.cs" />
+    <Compile Include="Services\TeacherOffService.cs" />
+    <Compile Include="Services\TemplateService.cs" />
+    <Compile Include="Services\TestAppointmentNoteService.cs" />
+    <Compile Include="Services\TestAppointmentService.cs" />
+    <Compile Include="Services\TimeLineService.cs" />
+    <Compile Include="Services\TranscriptService.cs" />
+    <Compile Include="Services\TutoringFeeService.cs" />
+    <Compile Include="Services\UserInformation.cs" />
+    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\UserInNFGroupService.cs" />
+    <Compile Include="Services\VideoActiveCodeService.cs" />
+    <Compile Include="Services\VideoCourseStudentService.cs" />
+    <Compile Include="Services\Ward.cs" />
+    <Compile Include="Services\ZoomConfigService.cs" />
+    <Compile Include="Services\ZoomRoomService.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="GetDateTime.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LMS\AssetCRM.cs" />
+    <Compile Include="LMS\Encryptor.cs" />
+    <Compile Include="Models\lmsDbContext.cs" />
+    <Compile Include="Models\tbl_Area.cs" />
+    <Compile Include="Models\tbl_District.cs" />
+    <Compile Include="Models\tbl_Notification.cs" />
+    <Compile Include="Models\tbl_NotificationInVideo.cs" />
+    <Compile Include="Models\tbl_UserInformation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Account.cs" />
+    <Compile Include="Users\AuthenticationFailureResult.cs" />
+    <Compile Include="Users\ClaimsAuthorizeAttribute.cs" />
+    <Compile Include="Users\JWTManager.cs" />
+    <Compile Include="Users\MyAuthorizationServerProvider.cs" />
+    <Compile Include="Users\Token.cs" />
+    <Compile Include="Users\UserMasterRepository .cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Upload\FileInCurriculum\2cf0bd83-54a4-476b-9dd7-a0eb68c48fc4.xlsx" />
+    <Content Include="Upload\FileInVideo\61806d9f-5ac0-458f-8a15-e0abd022a006.wav" />
+    <Content Include="Upload\Mau\MauThemHocVien.xlsx" />
+    <Content Include="Upload\Mau\test.wav" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Upload\DocumentLibrary\" />
+    <Folder Include="Upload\FileInNewsFeed\" />
+    <Folder Include="Upload\qrcode\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202302241053011_update_file.resx">
+      <DependentUpon>202302241053011_update_file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303021033110_updatecertification1233123.resx">
+      <DependentUpon>202303021033110_updatecertification1233123.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303030249318_update_user_rf.resx">
+      <DependentUpon>202303030249318_update_user_rf.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50003</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50003/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

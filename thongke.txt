@@ -1,0 +1,179 @@
+Thống kê - Tất cả thống kê đề lọc được theo nhiều trung tâm (mặc định là tất cả)
+*Admin 
+-- Thống kê từng ô  (làm dạng list cho FE for gắn vào từng ô)
+- Tổng khách hàng 
+- Số lượng khách mới trong tháng 
+- Số lượng khách đã chuyển thành học viên trong tháng 
+- Số lượng khách kiểm tra đầu vào trong tháng 
+- Tổng doanh thu trong tháng 
+- Tổng thu trong tháng
+- Tổng chi trong tháng
+- Tổng lớp mới trong tháng
+- Tổng lớp hoàn thành trong tháng 
+
+- Tổng học viên mới
+- Tổng học viên đang học 
+- Tổng học viên học xong
+- Tổng học viên chở xếp lớp
+- Tổng học viên bảo lưu 
+- Tổng nhân viên 
+- Tổng học viên cảnh báo 
+- Tổng lớp 
+- Tổng nở của học viên 
+
+-- Thống kê dạng bảng
+- Doanh thu trong từng tháng (chọn năm)
+- Khách hàng mới trong từng tháng (chọn năm)
+- Lớp mới trong từng tháng (chọn năm)
+- Tỷ lệ phản hồi (biểu đồ tròn)
+- Top 5 mục đính học 
+- Top 5 nguồn khách hàng 
+- Top 5 công việc
+- Top 5 nhu cầu học 
+- Độ tuổi của học viên (6-11,12 - 15,16 - 20, 21 - 25, 26 - 35, > 35)
+
+*Giáo viên 
+-- Thống kê từng ô  (làm dạng list cho FE for gắn vào từng ô)
+- Tổng buổi dạy trong tháng 
+- Tổng buổi đã hoàn thành trong tháng 
+- Tổng lớp hoàn thành trong tháng 
+
+- Tổng lớp dang dạy
+- Tổng lịch hẹn kiểm tra năng lực đầu vào (những buổi có gắn giáo viên)
+- Tổng lớp đã hoàn thành 
+
+-- Thống kê dạng bảng 
+- Đánh giá của học viên 
+- Tổng số buổi dạy trong từng tháng (chọn năm)
+
+*Học viên 
+-- Thống kê từng ô  (làm dạng list cho FE for gắn vào từng ô)
+- Tổng buổi học trong tháng 
+- Tổng buổi đã đi học trong tháng 
+- Tổng buổi vắng mặt trong tháng 
+- Tổng phản hổi đã gửi trong tháng
+- Tổng lớp kết thúc trong tháng
+
+- Tổng số lần thị cảnh báo 
+- Tổng lớp đang học 
+- Tổng lớp đa hoàn thành 
+
+-- Thống kê dạng bảng 
+- Danh sách điểm số trong từng lớp 
+- Tổng số buổi học trong từng tháng (chọn năm)
+- Danh sách phản hồi
+
+*Quản lý
+-- Thống kê từng ô  (làm dạng list cho FE for gắn vào từng ô)
+- Tổng khách hàng 
+- Số lượng khách mới trong tháng 
+- Số lượng khách đã chuyển thành học viên trong tháng 
+- Số lượng khách kiểm tra đầu vào trong tháng 
+- Tổng doanh thu trong tháng 
+- Tổng thu trong tháng
+- Tổng chi trong tháng
+- Tổng lớp mới trong tháng
+- Tổng lớp hoàn thành trong tháng 
+
+- Tổng học viên mới
+- Tổng học viên đang học 
+- Tổng học viên học xong
+- Tổng học viên chở xếp lớp
+- Tổng học viên bảo lưu 
+- Tổng nhân viên 
+- Tổng học viên cảnh báo 
+- Tổng lớp 
+- Tổng nở của học viên 
+
+-- Thống kê dạng bảng
+- Doanh thu trong từng tháng (chọn năm)
+- Khách hàng mới trong từng tháng (chọn năm)
+- Lớp mới trong từng tháng (chọn năm)
+- Tỷ lệ phản hồi (biểu đồ tròn)
+- Top 5 mục đính học 
+- Top 5 nguồn khách hàng 
+- Top 5 công việc
+- Top 5 nhu cầu học 
+- Độ tuổi của học viên (6-11,12 - 15,16 - 20, 21 - 25, 26 - 35, > 35)
+
+*Tư vấn viên 
+-- Thống kê từng ô  (làm dạng list cho FE for gắn vào từng ô)
+- Tổng khách hàng mới trong tháng 
+- Tổng học viên mới trong tháng 
+- Tổng khách hẹn test trong tháng 
+
+- Tổng khách hàng đã chuyển thành học viên
+- Tổng khách hàng đang hỗ trợ
+- Tổng học viên đang hỗ trợ 
+- Tổng học viên mới (đang gắn hỗ trợ)
+- Tổng học viên đang học (đang gắn hỗ trợ)
+- Tổng học viên học xong (đang gắn hỗ trợ)
+
+-- Thống kê dạng bảng 
+- Khách hàng mới trong từng tháng (chọn năm)
+- Khách hàng hẹn test trong từng tháng (chọn năm)
+
+*Kế toán 
+ -- Thống kê từng ô  (làm dạng list cho FE for gắn vào từng ô)
+- Tổng khách hàng 
+- Số lượng khách mới trong tháng 
+- Số lượng khách đã chuyển thành học viên trong tháng 
+- Số lượng khách kiểm tra đầu vào trong tháng 
+- Tổng doanh thu trong tháng 
+- Tổng thu trong tháng
+- Tổng chi trong tháng
+- Tổng lớp mới trong tháng
+
+- Tổng học viên mới
+- Tổng học viên đang học 
+- Tổng học viên học xong
+- Tổng học viên chở xếp lớp
+- Tổng học viên bảo lưu 
+- Tổng nở của học viên 
+
+-- Thống kê dạng bảng
+- Doanh thu trong từng tháng (chọn năm)
+- Khách hàng mới trong từng tháng (chọn năm)
+- Lớp mới trong từng tháng (chọn năm)
+
+*Học vụ
+-- Thống kê từng ô  (làm dạng list cho FE for gắn vào từng ô)
+- Tổng lớp mới trong tháng
+- Tổng lớp hoàn thành trong tháng 
+- Số lượng khách đã chuyển thành học viên trong tháng 
+- Số lượng khách kiểm tra đầu vào trong tháng 
+
+- Tổng lớp đang hỗ trợ 
+- Tổng học viên mới
+- Tổng học viên đang học 
+- Tổng học viên học xong
+- Tổng học viên chở xếp lớp
+- Tổng học viên bảo lưu 
+- Tổng học viên cảnh báo 
+- Tổng lớp 
+
+-- Thống kê dạng bảng
+- Khách hàng mới trong từng tháng (chọn năm)
+- Lớp mới trong từng tháng (chọn năm)
+- Top 5 mục đính học 
+- Top 5 nguồn khách hàng 
+- Top 5 công việc
+- Top 5 nhu cầu học 
+- Độ tuổi của học viên (6-11,12 - 15,16 - 20, 21 - 25, 26 - 35, > 35)
+
+*Phụ huynh (chọn học viên để xem thông tin của con mình)
+-- Thống kê từng ô  (làm dạng list cho FE for gắn vào từng ô)
+- Tổng buổi học trong tháng 
+- Tổng buổi đã đi học trong tháng 
+- Tổng buổi vắng mặt trong tháng 
+- Tổng phản hổi đã gửi trong tháng
+- Tổng lớp kết thúc trong tháng
+
+- Tổng số lần thị cảnh báo 
+- Tổng lớp đang học 
+- Tổng lớp đa hoàn thành 
+
+-- Thống kê dạng bảng 
+- Danh sách điểm số trong từng lớp 
+- Tổng số buổi học trong từng tháng (chọn năm)
+- Danh sách phản hồi
